@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+.index {
+	flex: align center;
+	background-color: blue;
+	height: 50px;
+	width: 50px;
+}
+
+.display {
+	flex: align center;
+	background-color: blue;
+	height: 50px;
+	width: 50px;
+}
