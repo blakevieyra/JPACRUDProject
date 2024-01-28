@@ -75,7 +75,6 @@ public class PatientController {
 
 	@GetMapping(path = "updatePatient.do")
 	public String updatePatient(@RequestParam("id") int id, Model model) {
-		System.out.println("********************************************************/updatePatient.do******************************************");
 		Patient patient = patientsDAO.findPatientById(id);
 		model.addAttribute("patients", patient);
 		return "updatePatient";
@@ -83,7 +82,6 @@ public class PatientController {
 
 	@PostMapping("/update")
 	public String updatePatient(@RequestParam("id") int id, @ModelAttribute Patient patient) throws SQLException {
-		System.out.println("********************************************************/update******************************************");
 		Patient existingPatient = patientsDAO.findPatientById(id);
 		existingPatient.setFullName(patient.getFullName());
 		existingPatient.setDateOfBirth(patient.getDateOfBirth());

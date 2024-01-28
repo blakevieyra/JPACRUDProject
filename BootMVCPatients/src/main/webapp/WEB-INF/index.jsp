@@ -27,16 +27,18 @@
 <body>
 	<!-- asks user for the film id, send film id to mapped controller getFilm.do, accesses the film id request from database
  -->
+ <div class="head">
 	<h3>Please enter a patient ID.</h3>
 	<form action="getPatient.do" method="POST">
 		Patient Id: <input type="number" name="id" /> <input type="submit"
 			value="Show Patient" />
 	</form>
+	</div>
 	<br>
-
 	<a href="addPatient.do">Add Patient</a>
+
 	<br>
-	<br>
+	
 
 	<!-- 	item and var should match what is in line 25 of controller. Ahref must to a get request only to controller .do.
  -->

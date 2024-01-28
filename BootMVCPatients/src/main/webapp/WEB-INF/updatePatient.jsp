@@ -18,74 +18,39 @@
 
 </head>
 <body>
-	<h1>Update Patient</h1>
+	<h3>Update Patient</h3>
 	<form action="/update" method="post">
 
-		<input type="hidden" name="id" value="${patients.id}"> 
-		<label for="fullName">Patient name: </label> 
-		<input type="text" name="fullName" value="${patients.fullName}" required> <br>
+		<input type="hidden" name="id" value="${patients.id}"> <label
+			for="fullName">Patient name: </label> <input type="text"
+			name="fullName" value="${patients.fullName}" required> <br>
 
 		<label for="reasonVisit">Reason for visit: </label> <input type="text"
 			name="reasonVisit" value="${patients.reasonVisit}" required>
-		<br> 
-		<label for="dateOfBirth">Date of birth: </label> <input
+		<br> <label for="dateOfBirth">Date of birth: </label> <input
 			type="datetime-local" name="dateOfBirth"
 			value="${patients.dateOfBirth}" required> <br> <label
 			for="appointmentDate">Appointment Date: </label> <input
 			type="datetime-local" name="appointmentDate"
 			value="${patients.appointmentDate}" required> <br> <label
-			for="systolic">Systolic: </label> <input type="number"
+			for="systolic">Systolic BP: </label> <input type="number"
 			name="systolic" value="${patients.systolic}" required> <br>
 
-		<label for="diastolic">"Diastolic": </label> <input type="number"
+		<label for="diastolic">Diastolic BP: </label> <input type="number"
 			name="diastolic" value="${patients.diastolic}" required> <br>
 
 		<label for="heartRate">Heartrate: </label> <input type="number"
 			name="heartRate" value="${patients.heartRate}" required> <br>
 
 		<label for="temperature">Temperature: </label> <input type="number"
-			name="temperature" value="${patients.appointmentDate}" required>
-		<br> 
-		<label for="dateOfBirth">Date of birth: </label> <input
-			type="datetime-local" name="dateOfBirth"
-			value="${patients.dateOfBirth}" required> <br> 
-			
-			<label
-			for="primaryDoctor">Primary Doctor: </label> <input type="text"
-			name="primaryDoctor" value="${patients.primaryDoctor}" required>
-		<br> 
-		<label for="insuranceInfo">Insurance Info: </label> <input
-			type="text" name="insuranceInfo" value="${patients.insuranceInfo}"
-			required> <br>
-			<input type="submit" value="Submit">
-</form>
-
-	<%-- 			<label for="fullName">Full Name:</label> <input type="text"
-			id="fullName" name="fullName" value="${patients.fullName}"><br>
-
-		<br> <label for="reasonVisit">Reason Visit:</label> <input
-			type="text" id="reasonVisit" name="reasonVisit"><br>
-		<br> <label for="dateOfBirth">Date of Birth: </label> <input
-			type="datetime-local" id="dateOfBirth" name="dateOfBirth"><br>
-		<br> <label for="appointmentDate">Appointment Date: </label> <input
-			type="datetime-local" id="appointmentDate" name="appointmentDate"><br>
-		<br> <label for="heartRate">Heart Rate: </label> <input
-			type="number" id="heartRate" name="heartRate"><br>
-		<br> <label for="respirationRate">Respiration Rate: </label> <input
-			type="number" id="respirationRate" name="respirationRate"><br>
-		<br> <label for="systolic">Systolic BP: </label> <input
-			type="number" id="systolic" name="systolic"><br>
-		<br> <label for="diastolic">Diastolic BP: </label> <input
-			type="number" id="diastolic" name="diastolic"><br>
-		<br> <label for="temperature">Temperature: </label> <input
-			type="number" id="temperature" name="temperature"><br>
-		<br> <label for="insuranceInfo">Insurance Info: </label> <input
-			type="text" id="insuranceInfo" name="insuranceInfo"><br>
+			name="temperature" value="${patients.temperature}" required>
 		<br> <label for="primaryDoctor">Primary Doctor: </label> <input
-			type="text" id="primaryDoctor" name="primaryDoctor"><br>
-		<br> <br> <input type="submit" value="Submit">
-	</form> --%>
-	<!-- Add more form fields here similarly -->
+			type="text" name="primaryDoctor" value="${patients.primaryDoctor}"
+			required> <br> <label for="insuranceInfo">Insurance
+			Info: </label> <input type="text" name="insuranceInfo"
+			value="${patients.insuranceInfo}" required> <br> <input
+			type="submit" value="Submit">
+	</form>
 
 	<p>
 		<a href="/">Go Back</a>
