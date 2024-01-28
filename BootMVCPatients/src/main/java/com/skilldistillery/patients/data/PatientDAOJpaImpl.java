@@ -53,19 +53,23 @@ public class PatientDAOJpaImpl implements PatientDAO {
 
 	// Updates a patient from dao using em
 	@Override
-	public boolean updatePatient(int id, Patient updatedPatient) {
-		Patient dbPatient = em.find(Patient.class, id);
-		dbPatient.setFullName(updatedPatient.getFullName());
-		dbPatient.setDateOfBirth(updatedPatient.getDateOfBirth());
-		dbPatient.setSystolic(updatedPatient.getSystolic());
-		dbPatient.setDiastolic(updatedPatient.getDiastolic());
-		dbPatient.setHeartRate(updatedPatient.getHeartRate());
-		dbPatient.setRespirationRate(updatedPatient.getRespirationRate());
-		dbPatient.setAppointmentDate(updatedPatient.getAppointmentDate());
-		dbPatient.setTemperature(updatedPatient.getTemperature());
-		dbPatient.setInsuranceInfo(updatedPatient.getInsuranceInfo());
-		dbPatient.setPrimaryDoctor(updatedPatient.getPrimaryDoctor());
-		dbPatient.setReasonVisit(updatedPatient.getReasonVisit());
-		return true;
+	public Patient updatePatient(Patient updatedPatient) {
+		System.out.println("******************************************");
+//		Patient dbPatient = em.find(Patient.class, id);
+//		dbPatient.setFullName(updatedPatient.getFullName());
+//		dbPatient.setDateOfBirth(updatedPatient.getDateOfBirth());
+//		dbPatient.setSystolic(updatedPatient.getSystolic());
+//		dbPatient.setDiastolic(updatedPatient.getDiastolic());
+//		dbPatient.setHeartRate(updatedPatient.getHeartRate());
+//		dbPatient.setRespirationRate(updatedPatient.getRespirationRate());
+//		dbPatient.setAppointmentDate(updatedPatient.getAppointmentDate());
+//		dbPatient.setTemperature(updatedPatient.getTemperature());
+//		dbPatient.setInsuranceInfo(updatedPatient.getInsuranceInfo());
+//		dbPatient.setPrimaryDoctor(updatedPatient.getPrimaryDoctor());
+//		dbPatient.setReasonVisit(updatedPatient.getReasonVisit());
+//		return true;
+		em.merge(updatedPatient);
+		em.flush();
+		return updatedPatient;
 	}
 }

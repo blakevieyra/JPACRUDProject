@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -74,17 +74,30 @@ public class PatientController {
 	}
 
 	@GetMapping(path = "updatePatient.do")
-	public String updatePatient() {
+	public String updatePatient(@RequestParam("id") int id, Model model) {
+		System.out.println("********************************************************/updatePatient.do******************************************");
+		Patient patient = patientsDAO.findPatientById(id);
+		model.addAttribute("patients", patient);
 		return "updatePatient";
 	}
 
-	@RequestMapping(path = "updatePatient.do", params = "id", method = RequestMethod.POST)
-	public ModelAndView updatePatient(@RequestParam("id") int id, Patient patient, Model model) throws SQLException {
-		ModelAndView mv = new ModelAndView();
-		boolean isUpdated = patientsDAO.updatePatient(id, patient);
-		mv.addObject("Error", isUpdated);
-		mv.setViewName("complete");
-		return mv;
+	@PostMapping("/update")
+	public String updatePatient(@RequestParam("id") int id, @ModelAttribute Patient patient) throws SQLException {
+		System.out.println("********************************************************/update******************************************");
+		Patient existingPatient = patientsDAO.findPatientById(id);
+		existingPatient.setFullName(patient.getFullName());
+		existingPatient.setDateOfBirth(patient.getDateOfBirth());
+		existingPatient.setSystolic(patient.getSystolic());
+		existingPatient.setDiastolic(patient.getDiastolic());
+		existingPatient.setHeartRate(patient.getHeartRate());
+		existingPatient.setRespirationRate(patient.getRespirationRate());
+		existingPatient.setAppointmentDate(patient.getAppointmentDate());
+		existingPatient.setTemperature(patient.getTemperature());
+		existingPatient.setInsuranceInfo(patient.getInsuranceInfo());
+		existingPatient.setPrimaryDoctor(patient.getPrimaryDoctor());
+		existingPatient.setReasonVisit(patient.getReasonVisit());
+		patientsDAO.updatePatient(existingPatient);
+		return "redirect:/getPatient.do?id=" + id;
 	}
 
 }

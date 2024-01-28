@@ -15,8 +15,9 @@
 	rel="stylesheet"
 	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css">
-<title>Patients</title>
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<title>Patients Info</title>
 </head>
 
 <body>
@@ -27,22 +28,29 @@
 		<c:choose>
 			<c:when test="${! empty patients}">
 				<ul>
-					<li>Full Name: ${patients.fullName}</li>
-					<li>Date of Appointment: ${patients.appointmentDate}</li>
-					<li>Reason for Visit: ${patients.reasonVisit}</li>
-					<li>Primary Doctor Name: ${patients.primaryDoctor}</li>
-					<li>Heart Rate: ${patients.heartRate}</li>
-					<li>Insurance on File: ${patients.insuranceInfo}</li>
-					<li>Rate of respiration: ${patients.respirationRate}</li>
-					<li>Systolic BP: ${patients.diastolic}</li>
-					<li>Diastolic BP: ${patients.systolic}</li>
-					<li>Temperature: ${patients.temperature}</li>
+					<li><strong>Full Name:</strong> ${patients.fullName}</li>
+					<li><strong>Date of Birth:</strong> ${patients.dateOfBirth}</li>
+					<li><strong>Date of Appointment:</strong>
+						${patients.appointmentDate}</li>
+					<li><strong>Reason for Visit:</strong> ${patients.reasonVisit}</li>
+					<li><strong>Primary Doctor Name:</strong>
+						${patients.primaryDoctor}</li>
+					<li><strong>Heart Rate:</strong> ${patients.heartRate}</li>
+					<li><strong>Insurance on File:</strong>
+						${patients.insuranceInfo}</li>
+					<li><strong>Rate of respiration:</strong>
+						${patients.respirationRate}</li>
+					<li><strong>Systolic BP:</strong> ${patients.diastolic}</li>
+					<li><strong>Diastolic BP:</strong> ${patients.systolic}</li>
+					<li><strong>Temperature</strong> : ${patients.temperature}</li>
 				</ul>
 
 				<a href="updatePatient.do?id=${patients.id}">Update patient</a>
 				<br>
+				<br>
 
 				<a href="deletePatient.do?id=${patients.id}">Delete patient</a>
+				<br>
 				<br>
 
 			</c:when>

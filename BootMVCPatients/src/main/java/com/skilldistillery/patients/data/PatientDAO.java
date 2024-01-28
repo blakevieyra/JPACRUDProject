@@ -14,5 +14,5 @@ public interface PatientDAO {
 
 	boolean deletePatient(Patient patient);
 
-	boolean updatePatient(int id, Patient patient);
+	Patient updatePatient(Patient patient);
 }
