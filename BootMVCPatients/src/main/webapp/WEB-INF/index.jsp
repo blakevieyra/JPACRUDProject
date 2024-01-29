@@ -25,25 +25,17 @@
 </head>
 
 <body>
-	<!-- asks user for the film id, send film id to mapped controller getFilm.do, accesses the film id request from database
- -->
- <div class="head">
-	<h3>Please enter a patient ID.</h3>
-	<form action="getPatient.do" method="POST">
-		Patient Id: <input type="number" name="id" /> <input type="submit"
-			value="Show Patient" />
-	</form>
+	<div class="head">
+		<h3>Please enter a patient ID</h3>
+		<form action="getPatient.do" method="POST">
+			<input type="number" name="id" /> <input type="submit"
+				value="Show Patient" />
+		</form>
 	</div>
-	<br>
-	<a href="addPatient.do">Add Patient</a>
-
-	<br>
-	
-
-	<!-- 	item and var should match what is in line 25 of controller. Ahref must to a get request only to controller .do.
- -->
+	<div class="header"></div>
+	<h3>Patient Information</h3>
+	</div>
 	<div class="info">
-		<h3>Patient Information</h3>
 		<table>
 			<tr>
 				<th>Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
@@ -66,17 +58,13 @@
 					<td>${patients.reasonVisit}</td>
 					<td>${patients.primaryDoctor}
 				</tr>
-
 			</c:forEach>
 		</table>
 	</div>
-
-
-
-	<!-- 	item and var should match what is in controller. Ahref must to a get request only to controller .do.
- -->
-
-
+	
+	<div class="links">
+		<a href="addPatient.do">Add Patient</a>
+	</div>
 </body>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

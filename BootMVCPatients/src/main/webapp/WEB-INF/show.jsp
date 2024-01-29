@@ -21,7 +21,7 @@
 </head>
 
 <body>
-
+	<h3>Patient Information</h3>
 	<div class="display">
 		<!-- This is a null check so page doesnt break
  -->
@@ -44,15 +44,6 @@
 					<li><strong>Diastolic BP:</strong> ${patients.systolic}</li>
 					<li><strong>Temperature</strong> : ${patients.temperature}</li>
 				</ul>
-
-				<a href="updatePatient.do?id=${patients.id}">Update patient</a>
-				<br>
-				<br>
-
-				<a href="deletePatient.do?id=${patients.id}">Delete patient</a>
-				<br>
-				<br>
-
 			</c:when>
 			<c:otherwise>
 				<h4>No Patient found</h4>
@@ -60,11 +51,14 @@
 		</c:choose>
 	</div>
 
-
-	<a href="/">Go Back</a>
-
+	<div class="links">
+		<a href="updatePatient.do?id=${patients.id}">Update patient</a> 
+		<a href="deletePatient.do?id=${patients.id}">Delete patient</a> 
+		<a href="/">Go Back</a>
+	</div>
 
 </body>
+
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

@@ -22,13 +22,7 @@
 </head>
 
 <body>
-	<h2>Result of Request:</h2>
-	<c:if test="${Error == true}">
-		<p>Record was deleted successfully</p>
-	</c:if>
-	<c:if test="${Error == false}">
-		<p>Record was not deleted</p>
-	</c:if>
+	<h2>Request failed. Please try again.</h2>
 	<br>
 	<a class="btn" href="/">Go Home</a>
 
