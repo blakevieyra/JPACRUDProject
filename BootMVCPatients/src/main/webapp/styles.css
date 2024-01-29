@@ -89,18 +89,19 @@ h2 {
 }
 
 th {
-	align-items: center;
-	justify-content: center;
-	border-bottom: 2px solid;
+	align-items: center !important;
+	justify-content: center !important;
+	border-spacing: 1px !important;
+	border-bottom: 2px solid black !important;
+	border-left: 2px solid black !important;
 	text-align: center;
-	
 }
 
 tr {
 	align-items: center;
 	justify-content: center;
-	border-bottom: 1px solid;
 	text-align: center;
+	border-bottom: 1px solid;
 }
 
 .header {

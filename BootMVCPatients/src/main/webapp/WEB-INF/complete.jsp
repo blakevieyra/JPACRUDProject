@@ -24,11 +24,13 @@
 </head>
 
 <body>
-	<h3><em>Request Completed Successfully</em></h3>
+<div class = "header">
+	<h2><em>Request Completed Successfully</em></h2>
+	</div>
 	<br>
 	<br>
 	<div class="links">
-		<a class="btn" href="/">Go Home</a>
+			<a class="btn" href="index.do">Go Back</a>
 	</div>
 </body>
 

@@ -58,7 +58,7 @@
 
 	<div class="links">
 		<p>
-			<a class="btn" href="/">Go Back</a>
+			<a class="btn" href="index.do">Go Back</a>
 		</p>
 	</div>
 

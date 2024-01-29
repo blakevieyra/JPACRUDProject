@@ -43,8 +43,8 @@
 
 		<div class="info">
 			<table>
-				<tr>
-					<th>Id</th>
+				<tr id ="th">
+					<th >Id</th>
 					<th>Patient Name</th>
 					<th>Date of Birth</th>
 					<th>Reason for Visit</th>

@@ -53,9 +53,21 @@ public class PatientDAOJpaImpl implements PatientDAO {
 
 	// Updates a patient from dao using em
 	@Override
-	public Patient updatePatient(Patient updatedPatient) {
-		em.merge(updatedPatient);
+	public Patient updatePatient(Patient patient) {
+		Patient updatePatient = patient;
+		updatePatient.setFullName(patient.getFullName());
+		updatePatient.setDateOfBirth(patient.getDateOfBirth());
+		updatePatient.setSystolic(patient.getSystolic());
+		updatePatient.setDiastolic(patient.getDiastolic());
+		updatePatient.setHeartRate(patient.getHeartRate());
+		updatePatient.setRespirationRate(patient.getRespirationRate());
+		updatePatient.setAppointmentDate(patient.getAppointmentDate());
+		updatePatient.setTemperature(patient.getTemperature());
+		updatePatient.setInsuranceInfo(patient.getInsuranceInfo());
+		updatePatient.setPrimaryDoctor(patient.getPrimaryDoctor());
+		updatePatient.setReasonVisit(patient.getReasonVisit());
+		em.merge(updatePatient);
 		em.flush();
-		return updatedPatient;
+		return updatePatient;
 	}
 }

@@ -22,7 +22,7 @@
 
 <body>
 	<div class = "header">
-	<h2><em>Patient Information</em></h3>
+	<h2><em>Patient Information</em></h2>
 </div>
 	<div class="display">
 		<c:choose>
@@ -55,7 +55,7 @@
 	<p>
 		<a class="btn" href="updatePatient.do?id=${patients.id}">Update patient</a>
 		<a class="btn" href="deletePatient.do?id=${patients.id}">Delete patient</a> 
-		<a class="btn" href="/">Go Back</a>
+		<a class="btn" href="index.do">Go Back</a>
 	</div>
 
 </body>

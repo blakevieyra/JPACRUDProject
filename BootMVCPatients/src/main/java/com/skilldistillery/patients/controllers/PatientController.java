@@ -80,21 +80,9 @@ public class PatientController {
 		return "updatePatient";
 	}
 
-	@PostMapping("/update")
+	@PostMapping("updatePatient.do")
 	public String updatePatient(@RequestParam("id") int id, @ModelAttribute Patient patient) throws SQLException {
-		Patient existingPatient = patientsDAO.findPatientById(id);
-		existingPatient.setFullName(patient.getFullName());
-		existingPatient.setDateOfBirth(patient.getDateOfBirth());
-		existingPatient.setSystolic(patient.getSystolic());
-		existingPatient.setDiastolic(patient.getDiastolic());
-		existingPatient.setHeartRate(patient.getHeartRate());
-		existingPatient.setRespirationRate(patient.getRespirationRate());
-		existingPatient.setAppointmentDate(patient.getAppointmentDate());
-		existingPatient.setTemperature(patient.getTemperature());
-		existingPatient.setInsuranceInfo(patient.getInsuranceInfo());
-		existingPatient.setPrimaryDoctor(patient.getPrimaryDoctor());
-		existingPatient.setReasonVisit(patient.getReasonVisit());
-		patientsDAO.updatePatient(existingPatient);
+		patientsDAO.updatePatient(patient);
 		return "redirect:/getPatient.do?id=" + id;
 	}
 

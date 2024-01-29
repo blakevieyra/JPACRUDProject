@@ -24,7 +24,8 @@
 <body>
 	<h2>Request failed. Please try again.</h2>
 	<br>
-	<a class="btn" href="/">Go Home</a>
+				<a class="btn" href="index.do">Go Back</a>
+
 
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

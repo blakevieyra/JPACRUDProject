@@ -20,7 +20,7 @@
 	<h2><em>Update Patient</em></h3>
 </div>
 	<div class="update">
-		<form action="/update" method="post">
+		<form action="updatePatient.do" method="post">
 
 			<input type="hidden" name="id" value="${patients.id}"> <label
 				for="fullName">Patient name: </label> <input type="text"
@@ -56,7 +56,8 @@
 	
 	<div class="links">
 		<p>
-			<a class="btn" href="/">Go Back</a>
+						<a class="btn" href="index.do">Go Back</a>
+
 		</p>
 	</div>
 	
