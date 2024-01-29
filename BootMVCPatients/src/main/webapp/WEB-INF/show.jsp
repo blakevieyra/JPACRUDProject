@@ -21,28 +21,28 @@
 </head>
 
 <body>
-	<h3>Patient Information</h3>
+	<div class = "header">
+	<h2><em>Patient Information</em></h3>
+</div>
 	<div class="display">
-		<!-- This is a null check so page doesnt break
- -->
 		<c:choose>
 			<c:when test="${! empty patients}">
 				<ul>
 					<li><strong>Full Name:</strong> ${patients.fullName}</li>
 					<li><strong>Date of Birth:</strong> ${patients.dateOfBirth}</li>
-					<li><strong>Date of Appointment:</strong>
+					<li><strong>Next Appointment Date:</strong>
 						${patients.appointmentDate}</li>
-					<li><strong>Reason for Visit:</strong> ${patients.reasonVisit}</li>
-					<li><strong>Primary Doctor Name:</strong>
-						${patients.primaryDoctor}</li>
-					<li><strong>Heart Rate:</strong> ${patients.heartRate}</li>
+					<li><strong>Last Recorded Reason for Visit:</strong> ${patients.reasonVisit}</li>
 					<li><strong>Insurance on File:</strong>
 						${patients.insuranceInfo}</li>
-					<li><strong>Rate of respiration:</strong>
+					<li><strong>Primary Doctor Name:</strong>
+						${patients.primaryDoctor}</li>
+					<li><strong>Last Recorded Heart Rate:</strong> ${patients.heartRate}</li>
+					<li><strong>Last Recorded Rate of respiration:</strong>
 						${patients.respirationRate}</li>
-					<li><strong>Systolic BP:</strong> ${patients.diastolic}</li>
-					<li><strong>Diastolic BP:</strong> ${patients.systolic}</li>
-					<li><strong>Temperature</strong> : ${patients.temperature}</li>
+					<li><strong>Last Recorded Systolic BP:</strong> ${patients.diastolic}</li>
+					<li><strong>Last Recorded Diastolic BP:</strong> ${patients.systolic}</li>
+					<li><strong>Last Recorded Temperature</strong> : ${patients.temperature}</li>
 				</ul>
 			</c:when>
 			<c:otherwise>
@@ -52,9 +52,10 @@
 	</div>
 
 	<div class="links">
-		<a href="updatePatient.do?id=${patients.id}">Update patient</a> 
-		<a href="deletePatient.do?id=${patients.id}">Delete patient</a> 
-		<a href="/">Go Back</a>
+	<p>
+		<a class="btn" href="updatePatient.do?id=${patients.id}">Update patient</a>
+		<a class="btn" href="deletePatient.do?id=${patients.id}">Delete patient</a> 
+		<a class="btn" href="/">Go Back</a>
 	</div>
 
 </body>

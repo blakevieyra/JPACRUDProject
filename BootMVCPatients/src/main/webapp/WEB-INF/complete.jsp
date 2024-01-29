@@ -24,15 +24,18 @@
 </head>
 
 <body>
-	Request completed successfully.
+	<h3><em>Request Completed Successfully</em></h3>
 	<br>
 	<br>
-	<a class="btn" href="/">Go Home</a>
+	<div class="links">
+		<a class="btn" href="/">Go Home</a>
+	</div>
+</body>
 
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-		crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+	crossorigin="anonymous"></script>
 
 
 </body>

@@ -16,8 +16,9 @@
 </head>
 
 <body>
-	<h3>Update Patient</h3>
-
+<div class = "header">
+	<h2><em>Update Patient</em></h3>
+</div>
 	<div class="update">
 		<form action="/update" method="post">
 
@@ -39,7 +40,7 @@
 			<label for="diastolic">Diastolic BP: </label> <input type="number"
 				name="diastolic" value="${patients.diastolic}" required> <br>
 
-			<label for="heartRate">Heartrate: </label> <input type="number"
+			<label for="heartRate">Heart Rate: </label> <input type="number"
 				name="heartRate" value="${patients.heartRate}" required> <br>
 
 			<label for="temperature">Temperature: </label> <input type="number"
@@ -52,11 +53,13 @@
 				type="submit" value="Submit">
 		</form>
 	</div>
+	
 	<div class="links">
 		<p>
-			<a href="/">Go Back</a>
+			<a class="btn" href="/">Go Back</a>
 		</p>
 	</div>
+	
 	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

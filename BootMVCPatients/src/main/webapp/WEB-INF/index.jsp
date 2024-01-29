@@ -21,50 +21,54 @@
 <link rel="stylesheet" type="text/css" href="styles.css">
 
 
-<title>Patients Home Page</title>
+<title>Home Page</title>
 </head>
 
 <body>
-	<div class="head">
-		<h3>Please enter a patient ID</h3>
-		<form action="getPatient.do" method="POST">
-			<input type="number" name="id" /> <input type="submit"
-				value="Show Patient" />
-		</form>
-	</div>
-	<div class="header"></div>
-	<h3>Patient Information</h3>
-	</div>
-	<div class="info">
-		<table>
-			<tr>
-				<th>Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-				<th>Patient
-					Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-				<th>Date of
-					Birth&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-				<th>Appointment
-					Time&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-				<th>Reason for
-					Visit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-				<th>Doctor Info&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-			</tr>
-			<c:forEach items="${patients}" var="patients">
+	<h2>
+		<em>Please enter an ID to find, update, or delete a patient</em>
+		</h2>
+		<div class="head">
+			<form action="getPatient.do" method="POST">
+				<input type="number" name="id" /> <input type="submit"
+					value="Find Patient" />
+			</form>
+		</div>
+
+		<div class="header">
+			<h2>
+				<em>Patient Information</em>
+				</h2>
+		</div>
+
+		<div class="info">
+			<table>
 				<tr>
-					<td>${patients.id}</td>
-					<td><a href="getPatient.do?id=${patients.id}">${patients.fullName}</a></td>
-					<td>${patients.dateOfBirth}</td>
-					<td>${patients.appointmentDate}</td>
-					<td>${patients.reasonVisit}</td>
-					<td>${patients.primaryDoctor}
+					<th>Id</th>
+					<th>Patient Name</th>
+					<th>Date of Birth</th>
+					<th>Reason for Visit</th>
+					<th>Doctor Name</th>
+					<th>Appointment Time</th>
+					
 				</tr>
-			</c:forEach>
-		</table>
-	</div>
-	
-	<div class="links">
-		<a href="addPatient.do">Add Patient</a>
-	</div>
+				<c:forEach items="${patients}" var="patients">
+					<tr>
+						<td>${patients.id}</td>
+						<td><a class="btn" href="getPatient.do?id=${patients.id}">${patients.fullName}</a></td>
+						<td>${patients.dateOfBirth}</td>
+						<td>${patients.reasonVisit}</td>
+						<td>${patients.primaryDoctor}
+						<td>${patients.appointmentDate}</td>
+
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
+
+		<div class="links">
+			<a class="btn" href="addPatient.do">Add Patient</a>
+		</div>
 </body>
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
